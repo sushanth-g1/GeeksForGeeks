@@ -27,3 +27,18 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# IntelliJ project files
+.idea/
+*.iml
+
+# Java build output
+out/
+target/
+*.class
+
+# Logs
+*.log
+
+# OS/system files
+.DS_Store
