@@ -1,0 +1,199 @@
+
+Time Complexity
+===============
+
+1. Time and Space Complexity
+   - Focuses on how time and memory usage scale with input size.
+
+2. Big O
+   - Denotes the upper bound or worst-case complexity.
+   - Example notations: O(1), O(logN), O(N), O(N²), etc.
+
+3. TLE (Time Limit Exceeded)
+   - Error occurs when the solution is not efficient enough for large inputs.
+
+Common Reasons for TLE
+======================
+
+1. High Time Complexity Algorithms
+   - Like O(n²), O(n³), or O(logⁿ)
+
+2. Unnecessary Nested Loops
+   - Especially in problems where a hashmap or binary search can be used.
+
+3. Not Using Efficient Data Structures
+   - Example: Using a list instead of a set/map in lookup-heavy problems.
+
+4. Infinite or Very Large Loops
+   - Missing base cases or incorrect recursion may lead to long or infinite execution.
+
+5. Not Breaking Early
+   - Continuing loops even after finding the answer.
+
+Important Concepts
+==================
+
+1. log₂N
+   - Represents the number of times we need to divide 'n' by 2 to reach 1.
+
+2. Numbers in Range
+   Examples:
+   [3, 10] ➝ [10 - 3 + 1] = 8
+   [7, 7] ➝ [7 - 7 + 1] = 1
+   [a, b] ➝ [b - a + 1] * this is the formula
+
+3. Arithmetic Progression (AP)
+   - Sequence: 4, 7, 10, 13
+   - Difference between consecutive terms is constant.
+
+   Generalised:
+   - a = first term
+   - d = common difference
+   - Sum of first n elements:
+     Sₙ = n/2 × (2a + (n - 1)d)
+
+4. Geometric Progression (GP)
+   - Sequence: 5, 10, 20, 40
+   - Each term is multiplied by a constant ratio.
+
+   Generalised:
+   - a = first term
+   - r = common ratio
+   - Sum of first n terms in GP:
+     Sₙ = a × (rⁿ - 1) / (r - 1)
+
+Time Complexity Questions
+=========================
+
+Q1:
+int fn(n) {
+  s = 0;
+  for (i = 1; i <= N; i++) {
+    s += i;
+  }
+}
+// Iterates [1, N]
+// No. of iterations = N
+// TC = O(N)
+
+Q2:
+for (i = 1; i <= N; i += 2) {
+  // do something
+}
+// No. of iterations = (n + 1) / 2
+// TC = O(N)
+
+Q3:
+for (i = 0; i < 100; i++) {
+  // do something
+}
+// Iterations = 100
+// TC = O(1)
+
+Q4:
+for (i = 1; i * i <= N; i++) {
+  // do something
+}
+// TC = O(√N)
+
+Q5:
+while (n > 1) {
+  n = n / 2;
+}
+// TC = O(logN)
+
+Q6:
+void fun(n) {
+  s = 0;
+  for (i = 0; i < N; i++) {
+    s = s + i;
+  }
+}
+// Infinite loop
+// TC = Infinite
+
+Q7:
+for (i = 0; i < 10; i++) {
+  for (j = 0; j < 1; j++) {
+    print(i + j);
+  }
+}
+// TC = O(N)
+
+Q8:
+for (i = 1; i <= N; i++) {
+  for (j = 1; j <= N; j++) {
+    print(i + j);
+  }
+}
+// TC = O(N²)
+
+Q9:
+for (i = 1; i <= N; i++) {
+  for (j = 1; j <= N; j=j*2) {
+    print(i+j);
+  }
+}
+This is a logarithmic loop — it doubles each time:
+1, 2, 4, 8, ..., ≤ N
+
+So this runs about log₂(N) times → O(log N)
+// TC = O(log N)
+
+Q10:
+for (i = 1; i <= Math.pow(2, N); i++) {
+  // do something
+}
+2 to the power N
+
+// Total iterations = 2^1 + 2^2 + ... + 2^n = 2^(n+1) - 2
+// TC = O(2ⁿ)
+
+Calculating Big O from Iterations
+=================================
+
+1. Ignore lower-order terms
+2. Ignore constant terms
+
+Example:
+No. of iterations = 4N² + 5N + 10
+= O(N²)
+
+Order of Time Complexities
+==========================
+
+O(1) < logN < √N < N < N logN < N√N < N² < 2^N < N! < N^N
+
+| **Complexity** | **Name**          | **Example Problem**                             |
+| -------------- | ----------------- | ----------------------------------------------- |
+| **O(1)**       | Constant time     | Accessing an array element, `a[i]`              |
+| **O(log N)**   | Logarithmic time  | Binary Search                                   |
+| **O(√N)**      | Square root time  | Prime check via trial division                  |
+| **O(N)**       | Linear time       | Linear Search, Simple traversal                 |
+| **O(N log N)** | Linearithmic time | Merge Sort, QuickSort (average case)            |
+| **O(N√N)**     | Root-linear       | Sieve of Eratosthenes                           |
+| **O(N²)**      | Quadratic time    | Bubble Sort, Insertion Sort, Nested loops       |
+| **O(2^N)**     | Exponential time  | Generating all subsets, Recursive Fibonacci     |
+| **O(N!)**      | Factorial time    | Travelling Salesman Problem (brute force)       |
+| **O(N^N)**     | Power-tower time  | All functions on all inputs (brute-force AI) |
+
+
+Simplifying Time Expressions
+============================
+
+Example:
+3N√N + 4logN + 3NlogN
+
+→ Ignore lower-order terms
+→ Final TC = O(N√N)
+
+Logarithmic Rule
+================
+log_b(b^x) = x
+
+log₂(2⁵) = 5
+
+log₁₀(10⁷) = 7
+
+N	N × √N		log₂N
+2³²	2³² × 2¹⁶ 	2³² × 32 || 2³² × 2⁵
