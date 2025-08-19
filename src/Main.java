@@ -1,4 +1,6 @@
 import com.dsa.arrays.PrefixSum;
+import com.dsa.arrays.Recursion;
+import com.dsa.arrays.SlidingWindow;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -20,7 +22,16 @@ public class Main {
 //        Arrays.maxSumSubArray(arr);
 //        Arrays.prefixSum(arr);
 //        PrefixSum.equi(arr);
-        int n = 4; int[] arr = {1, 2, 3, 4}; int q = 2; int[] queries = {1, 4, 2, 3};
-        System.out.println(PrefixSum.querySum2(n,arr,q,queries).toString());
+//        int n = 4; int[] arr = {1, 2, 3, 4}; int q = 2; int[] queries = {1, 4, 2, 3};
+//        System.out.println(PrefixSum.querySum2(n,arr,q,queries).toString());
+//        int[] arr = {2,2,2,2,5,5,5,8};
+//        System.out.println(SlidingWindow.numOfSubarrays( arr,3,  4));
+//        System.out.println("fact *** : "+ Recursion.fact(5));
+//        System.out.println(Recursion.fibo(5));
+//        int arr[] = {100, 200, 300, 400}; int k = 2;
+//        SlidingWindow.maximumSumSubarray(arr,k);
+//        System.out.println("Sum of n natural numbers : "+Recursion.sum(10));
+//        Recursion.printNumbers(10);
+        System.out.println(Recursion.checkPalindrome("MALAYALAM",0,8));
         }
     }
